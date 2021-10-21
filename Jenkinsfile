@@ -14,23 +14,14 @@ pipeline {
                 echo "Build"
                 helloVariable("Sujee")
                 script {
-                    utils.printFromFunction()
+                    utils.replaceString()
                 }
             }
 
         }
         stage ("Test") {
-            parallel {
-                stage ("Test on Windows") {
-                    steps {
-                        echo "Windows"
-                    }
-                }
-                stage ("Test on Linux"){
-                    steps {
-                        echo "Linux"
-                    }
-                }
+            steps {
+                %BUILD_NUMBER%
             }
 
         }
