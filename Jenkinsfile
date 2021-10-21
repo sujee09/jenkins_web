@@ -10,6 +10,17 @@ pipeline {
 
         }
         stage ("Test") {
+            parallel {
+                stage ("Test on Windows") {
+                    steps {
+                        echo "Windows"
+                    }
+                }
+                stage ("Test on Linux")
+                    steps {
+                        echo "Linux"
+                    }
+            }
             steps{
                 echo "Test"
             }
