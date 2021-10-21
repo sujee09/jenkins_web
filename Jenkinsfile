@@ -21,7 +21,9 @@ pipeline {
         }
         stage ("Test") {
             steps {
-                echo "${BUILD_NUMBER}"
+                sh """
+                cat index.html | grep “Deployed by Jenkins job: ${BUILD_NUMBER}”
+                """
             }
 
         }
