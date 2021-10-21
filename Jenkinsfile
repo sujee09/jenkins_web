@@ -21,9 +21,7 @@ pipeline {
         }
         stage ("Test") {
             steps {
-                script {
-                   test
-                }
+                test.sh
               
             }
 
