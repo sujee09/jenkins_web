@@ -21,7 +21,7 @@ pipeline {
         }
         stage ("Test") {
             steps {
-                sh "bash /test.sh"
+                sh "bash ./testBuild.sh"
               
             }
 
