@@ -1,21 +1,16 @@
 pipeline {
-
-    agent any
     
-    options {
-        timestamps()
-    }
+    agent any 
+
     stages {
-        stage ("Mr first stage") {
-            steps {
-                echo "This is a step in my first stage"
-            }
+        stage ("Build") {
+
         }
-        stage ("Print Env. Variables") {
-            steps {
-                sh "printenv"
-            }
+        stage ("Test") {
+
         }
-        
+        stage ("Deploy") {
+            
+        }
     }
 }
