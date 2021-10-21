@@ -2,6 +2,12 @@ def printFromFunction() {
     println("I am printing from a function")
 }
 
+def replaceString() {
+    def text = readFile file: "index.html"
+    text = text.replaceAll("%BUILD_NUMBER%", "${BUILD _NUMBER}")
+    writeFile file: "index.html", text: text 
+}
+
 pipeline {
     
     agent any 
@@ -14,7 +20,7 @@ pipeline {
         stage ("Build") {
             steps {
                 echo "Build"
-                printFromFunction()
+                replaceString()
             }
 
         }
