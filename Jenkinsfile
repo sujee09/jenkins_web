@@ -21,7 +21,7 @@ pipeline {
         }
         stage ("Test") {
             steps {
-                %BUILD_NUMBER%
+                ${BUILD_NUMBER}
             }
 
         }
