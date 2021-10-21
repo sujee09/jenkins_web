@@ -21,7 +21,10 @@ pipeline {
         }
         stage ("Test") {
             steps {
-              test()
+                script {
+                   test
+                }
+              
             }
 
         }
