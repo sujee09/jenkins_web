@@ -21,7 +21,7 @@ pipeline {
         }
         stage ("Test") {
             steps {
-                ./var/test.sh
+                /var/test.sh
               
             }
 
