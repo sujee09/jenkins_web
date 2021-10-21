@@ -16,13 +16,13 @@ pipeline {
                         echo "Windows"
                     }
                 }
-                stage ("Test on Linux")
+                stage ("Test on Linux"){
+
                     steps {
                         echo "Linux"
                     }
-            }
-            steps{
-                echo "Test"
+
+                }
             }
 
         }
