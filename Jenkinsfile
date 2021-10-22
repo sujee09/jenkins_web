@@ -39,9 +39,12 @@ pipeline {
         }
     }
 
-post {
-    always {
-        archiveArtifacts artifacts: 'index.html', followSymlinks: false
+    post {
+        always {
+            archiveArtifacts artifacts: 'index.html', followSymlinks: false
+        }
+        cleanup {
+            cleanWs()
+        }
     }
-}
 }
