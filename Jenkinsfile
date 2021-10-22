@@ -8,10 +8,20 @@ pipeline {
         timestamps()
     }
 
+    environment {
+        MYENVVAR = "testenvvar"
+    }
+
+    parameters {
+        string(name: 'Name', defaultValue: 'Sujee', description: 'Your Name')
+    }
+
     stages {
         stage ("Build") {
             steps {
                 echo "Build"
+                echo "${MYENVVAR}"
+                echo "${name}"
                 helloVariable("Sujee")
                 script {
                     utils.replaceString()
