@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo "Build"
                 echo "${MYENVVAR}"
-                echo "${name}"
+                echo "${params.Name}"
                 helloVariable("Sujee")
                 script {
                     utils.replaceString()
